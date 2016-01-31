@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Node.js web browser</title>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#sum").click(function(){
+		var c1 = $("#c1").val();
+		var c2 = $("#c2").val();
+        	$.get("sum", {c1:c1, c2:c2 }, function(data, status){
+		        alert("The sum is: "+data);
+		});
+    	});
+}); 
+</script>
+</head>
+<body>
+<h1>Example - How to use Node.js to make Ajax request</h1>
+<label for="c1">Number 1</label>
+<input type="text" id="c1"><br>
+<label for="c2">Number 2</label>
+<input type="text" id="c2"><br>
+<button id="sum">Sum!</button>
+</body>
+</html>
